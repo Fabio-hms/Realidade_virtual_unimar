@@ -1,9 +1,5 @@
 import * as THREE from 'three';
 
-/**
- * Encapsula a cena, a câmera e os objetos de exemplo.
- * `interactive` é a lista de objetos que os controllers podem apontar/pegar.
- */
 export class XRScene {
   readonly scene = new THREE.Scene();
   readonly camera: THREE.PerspectiveCamera;
@@ -20,7 +16,7 @@ export class XRScene {
       0.01,
       100,
     );
-    this.camera.position.set(0, 1.6, 3); // altura dos olhos (metros)
+    this.camera.position.set(0, 1.6, 3);
 
     this.addLights();
     this.addFloor();
@@ -61,7 +57,6 @@ export class XRScene {
     }
   }
 
-  /** Animação simples: cubos flutuando e girando. */
   update(delta: number): void {
     const t = performance.now() / 1000;
     this.cubes.forEach((cube, i) => {
