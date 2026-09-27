@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quadro elétrico em trilho | Grupo 8</title>
+    <link rel="icon" href="data:," />
+  </head>
+  <body>
+    <header class="top"><div><span class="eyebrow">GRUPO 8 · MÓDULOS 01–03</span><h1>Quadro elétrico em trilho</h1></div><span class="badge">Demonstração em tela</span></header>
+    <main>
+      <section class="scene-area" aria-label="Cena tridimensional">
+        <canvas id="scene" aria-label="Quadro com placa, trilho, seis disjuntores, dois bornes e barramento"></canvas>
+        <div class="legend"><span>6 disjuntores</span><span>2 bornes</span><span>1 barramento</span><span>Escala 1:1</span></div>
+        <p class="canvas-help">Arraste para orbitar · roda do mouse para aproximar · botão direito para deslocar a câmera</p>
+      </section>
+      <aside>
+        <span class="eyebrow">CONFERÊNCIA DA ESTRUTURA</span>
+        <h2>Uma peça, um lugar na árvore</h2>
+        <p>A placa carrega o trilho. Cada disjuntor carrega sua chave, terminais e encaixe.</p>
+        <div class="actions"><button id="move" aria-pressed="false">Mover placa</button><button id="reparent">Trocar pai do disjuntor 1</button><button id="reset" class="secondary">Reiniciar cena</button></div>
+        <p id="status" role="status">Preparando a cena…</p>
+        <h3>Posição no mundo</h3><pre id="measurement">Troque o pai para medir a posição antes e depois.</pre>
+        <p class="note">Trocar o pai preserva o lugar da peça. Encaixar e validar a montagem são etapas futuras; o indicador permanece desligado.</p>
+        <h3>Orçamento do quadro</h3><p id="metrics">Aguardando a primeira amostra…</p>
+        <p class="note">O mesmo indicador está preso à placa, dentro da cena. CPU e intervalo são medidas diferentes; o tempo da GPU não é medido.</p>
+        <details><summary>Ver árvore de objetos</summary><pre id="tree"></pre></details>
+      </aside>
+    </main>
+    <section class="diagnostics">
+      <div><span class="eyebrow">O QUE ESTE APARELHO OFERECE</span><h2>Sonda de capacidades</h2><p>A consulta de suporte é automática. Os botões abrem somente uma sessão temporária de diagnóstico, não a cena em VR/AR.</p></div>
+      <div class="actions"><button id="probe-vr" disabled>Sondar VR</button><button id="probe-ar" disabled>Sondar AR</button></div>
+      <div id="report"></div>
+      <div class="export"><label for="device">Aparelho e navegador usados na medição</label><input id="device" placeholder="Ex.: notebook do laboratório, modelo, navegador e versão" /><button id="export">Exportar medição</button></div>
+    </section>
+    <footer>Geometria provisória · montagem lógica didática · Grupo 8</footer>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
