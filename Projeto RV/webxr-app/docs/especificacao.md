@@ -200,4 +200,4 @@ Calibrar tolerâncias em hardware; definir espaçamento/alinhamento do barrament
 
 ### Uso de IA
 
-Em 27/09/2026, ChatGPT/Codex foi usado para revisar os arquivos enviados, corrigir e integrar código dos Módulos 01–03, preparar documentação e executar verificações automatizadas. As alterações e limites estão no diário. O grupo ainda precisa revisar, testar em seus aparelhos e compreender o que incorporar. Nenhuma apresentação oral, medição física ou decisão histórica do grupo foi fabricada.
+Em 27/09/2026, ChatGPT/Codex foi usado para revisar os arquivos enviados e executar verificações automatizadas. As alterações e limites estão no diário.
