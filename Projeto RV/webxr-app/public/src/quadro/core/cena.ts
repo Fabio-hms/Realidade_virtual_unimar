@@ -54,7 +54,14 @@ export function montarCena() {
   for (const [indice, dado] of QUADRO.disjuntores.entries()) {
     const no = new Group();
     no.name = dado.id;
-    no.position.set(-0.125 + indice * 0.05, 0.041, 0.12);
+    if (dado.id === 'disjuntor-1')
+    {
+      no.position.set(-0.125, 0.225, -0.0815);
+    }
+    else
+    {
+      no.position.set(-0.125 + indice * 0.05, 0.041, 0.12);
+    }
     no.add(caixa('corpo', dado.medidas, 0xe1e7ea));
     for (const [nome, y] of [['entrada', 0.027], ['saida', -0.027]] as const) {
       const terminal = caixa(nome, [0.009, 0.009, 0.004], 0x65798a);
