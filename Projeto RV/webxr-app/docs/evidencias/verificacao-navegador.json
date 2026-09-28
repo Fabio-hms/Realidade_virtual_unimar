@@ -1,0 +1,11 @@
+{
+  "browser": "153.0.8010.0",
+  "errors": [],
+  "measurement": "area-de-apoio → trilho-principal\nAntes: (-0.125000000, 0.841000000, 0.120000000) m\nDepois: (-0.125000000, 0.841000000, 0.120000000) m\nDesvio: 5.551e-17 m\nErro máximo na matriz: 5.551e-17",
+  "gpu": {
+    "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+    "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)"
+  },
+  "support": "Contexto seguro: sim. API XR: presente. A cena de tela usa WebGL, mesmo sem uma sessão XR inline.\n\nModo XR\tResposta\tEvidência\ninline\tsim\tO navegador declarou suporte; a abertura ainda depende da sessão e das permissões.\nimmersive-vr\tnao\tO navegador declarou que este modo XR não é suportado.\nimmersive-ar\tnao\tO navegador declarou que este modo XR não é suportado.\n\nSessão: nao-solicitada.",
+  "mobileOverflow": false
+}

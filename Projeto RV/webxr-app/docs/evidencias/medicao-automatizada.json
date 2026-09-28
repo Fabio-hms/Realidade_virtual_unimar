@@ -1,0 +1,91 @@
+{
+  "registradoEm": "2026-09-27T14:45:24.185Z",
+  "aparelho": "Ambiente automatizado Linux x86_64; AMD EPYC 9V74 (VM); Chromium headless; SwiftShader",
+  "navegador": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.0 Safari/537.36",
+  "plataforma": "Linux x86_64",
+  "viewport": {
+    "largura": 1440,
+    "altura": 1000,
+    "dpr": 1
+  },
+  "renderer": "WebKit WebGL",
+  "regimeDaCena": "tela-webgl",
+  "sonda": {
+    "semSessao": {
+      "temApiXr": true,
+      "contextoSeguro": true,
+      "regimes": [
+        {
+          "regime": {
+            "id": "inline",
+            "nome": "Tela",
+            "tratamentoDoMundo": "Exibe o mundo virtual numa janela, sem alterar o mundo físico.",
+            "espacoDeReferencia": "Coordenadas da cena; viewer se houver sessão XR inline.",
+            "rastreia": "Mouse/toque controla a câmera; não exige rastreamento corporal.",
+            "registroContra": "Origem virtual da área de apoio."
+          },
+          "suporte": "sim",
+          "observacao": "O navegador declarou suporte; a abertura ainda depende da sessão e das permissões."
+        },
+        {
+          "regime": {
+            "id": "immersive-vr",
+            "nome": "Visor / VR",
+            "tratamentoDoMundo": "Substitui a visão do ambiente por um mundo virtual.",
+            "espacoDeReferencia": "local-floor pretendido; recuo para local com altura explícita se necessário.",
+            "rastreia": "Pose do observador e fontes de entrada efetivamente concedidas.",
+            "registroContra": "Chão do espaço rastreado; apoio a 0,80 m dele."
+          },
+          "suporte": "nao",
+          "observacao": "O navegador declarou que este modo XR não é suportado."
+        },
+        {
+          "regime": {
+            "id": "immersive-ar",
+            "nome": "Câmera / AR",
+            "tratamentoDoMundo": "Preserva a visão do mundo físico e acrescenta o quadro virtual.",
+            "espacoDeReferencia": "local; viewer apenas para lançar o raio de hit-test.",
+            "rastreia": "Pose do observador, entradas e superfícies se hit-test for concedido.",
+            "registroContra": "Superfície real escolhida; âncora se concedida. Escala inicial 1:1."
+          },
+          "suporte": "nao",
+          "observacao": "O navegador declarou que este modo XR não é suportado."
+        }
+      ]
+    },
+    "estadoDaSessao": "nao-solicitada"
+  },
+  "orcamento": {
+    "tetoMs": 16.666666666666668,
+    "quadrosMedidos": 90,
+    "custoMedioMs": 0.8355555555498642,
+    "intervaloMedioMs": 17.96231111111111,
+    "piorIntervaloMs": 116.70000000000005,
+    "quadrosAcimaDoTeto": 60,
+    "chamadasDeDesenho": 46,
+    "triangulos": 594
+  },
+  "reparentagens": [
+    {
+      "objeto": "disjuntor-1",
+      "paiAnterior": "area-de-apoio",
+      "paiNovo": "trilho-principal",
+      "antes": [
+        -0.125,
+        0.8410000000000001,
+        0.12
+      ],
+      "depois": [
+        -0.125,
+        0.8410000000000001,
+        0.12000000000000005
+      ],
+      "desvioMetros": 5.551115123125783e-17,
+      "erroMatriz": 5.551115123125783e-17
+    }
+  ],
+  "limites": [
+    "CPU/submissão; GPU não medida.",
+    "Montagem/encaixe e cena imersiva ainda não implementados."
+  ]
+}

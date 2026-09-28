@@ -1,0 +1,21 @@
+
+> quadro-eletrico-grupo08@0.3.0 test
+> node --experimental-strip-types --test tests/*.test.ts
+
+✔ a cena contém os nove componentes manipuláveis declarados e as suas partes (6.607439ms)
+✔ mover a placa move o trilho mas deixa um disjuntor solto sobre o apoio (1.782346ms)
+✔ reparentagem preserva a matriz inteira com translação, rotação e escala uniforme nos ancestrais (0.766956ms)
+✔ reparentagem recusa ciclos e escalas que poderiam gerar cisalhamento (0.512172ms)
+✔ dez segundos de simulação são iguais a 30, 60 e 120 Hz (0.710461ms)
+✔ o relógio limita a suspensão mas preserva o intervalo real para medir (0.123777ms)
+✔ orçamento mantém só a janela recente e não confunde CPU com intervalo (0.243657ms)
+✔ a sonda distingue evidência de falta de informação (0.214163ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 151.657752
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
