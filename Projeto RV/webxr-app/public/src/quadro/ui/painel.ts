@@ -1,6 +1,5 @@
 import { CanvasTexture, Mesh, MeshBasicMaterial, PlaneGeometry, SRGBColorSpace } from 'three';
 import type { LeituraDoOrcamento } from '../core/orcamento.ts';
-/** Texto dinâmico num objeto da cena; nenhuma imagem decorativa é importada. */
 export function montarPainel() {
   const canvas = document.createElement('canvas');
   canvas.width = 1024; canvas.height = 256;
