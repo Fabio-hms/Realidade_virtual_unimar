@@ -10,7 +10,6 @@ export function montarLaco(palco: Palco, cena: Scene, relogio: Relogio, orcament
     const amostra = relogio.avancar(instanteMs);
     for (const passo of passos) passo(amostra);
     palco.desenhar(cena);
-    // CPU e submissão de desenho. A GPU trabalha de forma assíncrona.
     orcamento.registrar(performance.now() - inicio, amostra.intervaloReal * 1000,
       palco.renderer.info.render.calls, palco.renderer.info.render.triangles);
   }
