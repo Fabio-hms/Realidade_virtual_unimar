@@ -1,4 +1,3 @@
-/** Metas, não medições. O regime implementado nesta etapa é a tela. */
 export const TETO_DESKTOP_MS = 1000 / 60;
 export const TETO_VISOR_MS = 1000 / 90;
 export interface LeituraDoOrcamento {
@@ -25,7 +24,7 @@ export class Orcamento {
   }
   registrar(custoMs: number, intervaloMs: number, chamadas: number, triangulos: number): void {
     if (![custoMs, intervaloMs, chamadas, triangulos].every(n => Number.isFinite(n) && n >= 0)) return;
-    if (intervaloMs === 0) return; // O primeiro quadro não tem intervalo para medir.
+    if (intervaloMs === 0) return;
     this.custos[this.indice] = custoMs;
     this.intervalos[this.indice] = intervaloMs;
     this.indice = (this.indice + 1) % this.tamanho;
