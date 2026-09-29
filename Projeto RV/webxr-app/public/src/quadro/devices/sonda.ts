@@ -39,7 +39,6 @@ export async function sondarSemSessao(): Promise<SondaSemSessao> {
   return { temApiXr: !!navigator.xr, contextoSeguro: window.isSecureContext, regimes: await levantarRelatorio() };
 }
 
-/** Limites: 60 quadros ou 6 s; fechar o visor também termina a espera. */
 function observar(sessao: XRSession, referencia: XRReferenceSpace | undefined, gl: WebGL2RenderingContext) {
   return new Promise<{ estabilidade: Estabilidade; poses: number; emuladas: number; fontes: FonteDeEntradaSondada[]; fim: string }>(resolve => {
     const contador = new ContadorDeEstabilidade();
@@ -83,7 +82,6 @@ function observar(sessao: XRSession, referencia: XRReferenceSpace | undefined, g
 
 export async function sondarEmSessao(modo: ModoSondavel): Promise<SondaEmSessao> {
   if (!navigator.xr) throw new DOMException('API XR ausente.', 'NotSupportedError');
-  // A chamada ocorre antes de qualquer await: conserva a ativação do clique.
   const sessao = await navigator.xr.requestSession(modo, {
     optionalFeatures: RECURSOS_CONSULTADOS.map(r => r.nome),
   });
@@ -102,7 +100,6 @@ export async function sondarEmSessao(modo: ModoSondavel): Promise<SondaEmSessao>
       try { espacos.set(nome, await sessao.requestReferenceSpace(nome)); } catch { /* Não concedido. */ }
     }
     if (encerrada) throw new Error('Sessão encerrada antes da coleta.');
-    // viewer acompanha a cabeça: não é evidência de deslocamento no mundo.
     const referencia = espacos.get('local') ?? espacos.get('local-floor');
     const referenciaDaAmostra = espacos.has('local') ? 'local' : espacos.has('local-floor') ? 'local-floor' : 'nenhuma';
     const amostra = await observar(sessao, referencia, gl);
