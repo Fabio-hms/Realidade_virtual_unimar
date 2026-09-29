@@ -10,7 +10,6 @@ export interface MedidaDeReparentagem {
   readonly erroMatriz: number;
 }
 
-/** Escala não uniforme nos ancestrais poderia gerar cisalhamento na troca. */
 function validarCaminho(no: Object3D): void {
   for (let atual: Object3D | null = no; atual; atual = atual.parent) {
     const { x, y, z } = atual.scale;
@@ -22,7 +21,6 @@ function validarCaminho(no: Object3D): void {
   }
 }
 
-// recorte:inicio reparentagem-preserva-mundo
 export function reparentar(filho: Object3D, novoPai: Object3D): MedidaDeReparentagem {
   for (let no: Object3D | null = novoPai; no; no = no.parent) {
     if (no === filho) throw new Error('A troca criaria um ciclo na árvore.');
@@ -34,7 +32,6 @@ export function reparentar(filho: Object3D, novoPai: Object3D): MedidaDeReparent
   const mundoAntes = filho.matrixWorld.clone();
   const antes = new Vector3().setFromMatrixPosition(mundoAntes);
   const paiAnterior = filho.parent?.name ?? '(sem pai)';
-  // M_local = inversa(M_novo_pai) * M_mundo_anterior.
   const local = new Matrix4().copy(novoPai.matrixWorld).invert().multiply(mundoAntes);
   novoPai.add(filho);
   local.decompose(filho.position, filho.quaternion, filho.scale);
@@ -44,7 +41,6 @@ export function reparentar(filho: Object3D, novoPai: Object3D): MedidaDeReparent
   return { objeto: filho.name, paiAnterior, paiNovo: novoPai.name,
     antes: antes.toArray(), depois: depois.toArray(), desvioMetros: antes.distanceTo(depois), erroMatriz };
 }
-// recorte:fim reparentagem-preserva-mundo
 
 export function descreverArvore(raiz: Object3D): string {
   const linhas: string[] = [];
