@@ -1,5 +1,4 @@
 export type GrausDeLiberdade = 'seis-observados' | 'posicao-emulada' | 'indeterminado';
-/** Espaços concedidos e presença de gripSpace não provam rastreamento posicional. */
 export function grausDeLiberdade(observadas: number, emuladas: number): GrausDeLiberdade {
   if (observadas <= 0) return 'indeterminado';
   return emuladas < observadas ? 'seis-observados' : 'posicao-emulada';
