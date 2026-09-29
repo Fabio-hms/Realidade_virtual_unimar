@@ -1,4 +1,3 @@
-/** Vocabulário e medidas da cena. Uma unidade de comprimento equivale a 1 m. */
 export type DisjuntorId = 'disjuntor-1' | 'disjuntor-2' | 'disjuntor-3'
   | 'disjuntor-4' | 'disjuntor-5' | 'disjuntor-6';
 export type BorneId = 'borne-entrada' | 'borne-saida';
@@ -58,7 +57,6 @@ const IDS_DISJUNTORES: readonly DisjuntorId[] = [
   'disjuntor-4', 'disjuntor-5', 'disjuntor-6',
 ];
 
-// recorte:inicio dominio-declarado-como-dado
 export const QUADRO: Dominio = {
   nome: 'Quadro elétrico em trilho',
   descricao: 'Uma placa com trilho horizontal e componentes disponíveis sobre uma área de apoio: '
@@ -85,9 +83,7 @@ export const QUADRO: Dominio = {
   barramentos: [{ id: 'barramento-1', nome: 'Barramento', partes: ['corpo', 'contatos'], medidas: [0.35, 0.015, 0.025] }],
   trilhos: [{ id: 'trilho-principal', nome: 'Trilho principal', medidas: [0.40, 0.035, 0.015], eixoDeDeslizamento: 'x' }],
 };
-// recorte:fim dominio-declarado-como-dado
 
-/** Valores iniciais da especificação: serão aplicados no módulo de encaixe. */
 export const TOLERANCIAS = {
   disjuntor: { posicaoMetros: 0.015, anguloGraus: 10 },
   borne: { posicaoMetros: 0.015, anguloGraus: 10 },
