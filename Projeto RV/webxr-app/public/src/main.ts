@@ -83,12 +83,10 @@ async function iniciar(): Promise<void> {
   };
   const laco = montarLaco(palco, cena.sala, relogio, orcamento);
   laco.aoPasso(amostra => {
-    // recorte:inicio movimento-por-tempo
     if (movendo) {
       tempoMovimento += amostra.delta;
       cena.placa.rotation.y = Math.sin(tempoMovimento * 0.8) * Math.PI / 12;
     }
-    // recorte:fim movimento-por-tempo
     if (amostra.decorrido - ultimaLeitura >= 0.25) {
       ultimaLeitura = amostra.decorrido;
       const leitura = orcamento.ler();
@@ -106,7 +104,6 @@ async function iniciar(): Promise<void> {
     sondando = true;
     vr.disabled = ar.disabled = true;
     status.textContent = 'Sessão temporária de diagnóstico: observe o espaço e mantenha os controles visíveis. A coleta termina em até 6 s após a preparação.';
-    // Não fazer consultas assíncronas antes de requestSession no evento de clique.
     const promessa = sondar(modo, capacidades);
     laco.parar();
     try {
