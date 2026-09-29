@@ -32,7 +32,6 @@ export function montarCena() {
   tampo.position.y = -QUADRO.apoio.medidas[1] / 2;
   apoio.add(tampo);
 
-  // recorte:inicio parentesco-do-quadro
   const placa = new Group();
   placa.name = 'placa';
   placa.position.set(0, 0.21, -0.15);
@@ -43,7 +42,6 @@ export function montarCena() {
   trilho.position.set(0, -0.005, 0.019);
   placa.add(trilho);
   trilho.add(caixa('corpo-do-trilho', QUADRO.trilhos[0].medidas, 0xc0ced8));
-  // recorte:fim parentesco-do-quadro
 
   const indicador = new Mesh(new CylinderGeometry(QUADRO.indicador.raio, QUADRO.indicador.raio, 0.009, 16), material(0x263e34));
   indicador.name = 'indicador-de-conclusao-desligado';
