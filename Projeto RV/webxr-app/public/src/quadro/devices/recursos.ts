@@ -8,6 +8,5 @@ export const RECURSOS_CONSULTADOS = [
 ] as const;
 export function estadoDoRecurso(nome: string, concedidos: readonly string[] | undefined): EstadoDeRecurso {
   if (concedidos === undefined) return 'indeterminado';
-  // Não estar na lista não revela se faltou suporte ou autorização.
   return concedidos.includes(nome) ? 'concedido' : 'nao-concedido';
 }
