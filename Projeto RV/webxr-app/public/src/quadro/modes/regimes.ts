@@ -7,7 +7,6 @@ export interface Regime {
   readonly rastreia: string;
   readonly registroContra: string;
 }
-/** Declarações do projeto; não são capacidades presumidas do dispositivo. */
 export const REGIMES: readonly Regime[] = [
   { id: 'inline', nome: 'Tela',
     tratamentoDoMundo: 'Exibe o mundo virtual numa janela, sem alterar o mundo físico.',
