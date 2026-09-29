@@ -21,7 +21,6 @@ export function montarPalco(canvas: HTMLCanvasElement) {
     if (renderer.getPixelRatio() === densidade && canvas.width === Math.floor(largura * densidade)
       && canvas.height === Math.floor(altura * densidade)) return false;
     renderer.setPixelRatio(densidade);
-    // setSize recebe pixels CSS; pixelRatio é aplicado uma única vez.
     renderer.setSize(largura, altura, false);
     camera.aspect = largura / altura;
     camera.updateProjectionMatrix();
